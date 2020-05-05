@@ -2,6 +2,8 @@ package main
 
 import (
 	"fmt"
+	"go-barracks/constant"
+	"go-barracks/primitive"
 	"strconv"
 )
 
@@ -18,6 +20,37 @@ var scope int = 7
 
 // uppper case variable means this variable is globally visible
 var SCOPE int = 7
+
+const (
+	_  = iota // ignore first value by assigning to blank identifier
+	KB = 1 << (10 * iota)
+	MB
+	GB
+	TB
+	PB
+	EB
+	ZB
+	YB
+)
+
+const (
+	errorSpecialist = iota
+	catSpecialist
+	dogSpecialist
+	snakeSpecialist
+)
+
+const (
+	isAdmin = 1 << iota
+	isHeadquarters
+	canSeeFinancials
+
+	canSeeAfrica
+	canSeeAsia
+	canSeeEurope
+	canSeeNorthAmerica
+	canSeeSouthAmerica
+)
 
 func main() {
 	// 3 ways to declare variables
@@ -54,4 +87,22 @@ func main() {
 
 	var strin string = strconv.Itoa(inte) //Itoa is used to convert a integer to string
 	fmt.Printf("%v, %T\n", strin, strin)
+
+	primitive.Boolean(true)
+	primitive.Integer()
+	primitive.Bitoper()
+	primitive.Bitshift()
+
+	//Constants
+	fmt.Printf("\n")
+	const myConst int = 45
+	fmt.Printf("%v %T\n", myConst, myConst)
+
+	constant.Cons()
+
+	fmt.Printf("%v\n", canSeeSouthAmerica)
+
+	var roles byte = isAdmin | canSeeFinancials | canSeeEurope | canSeeSouthAmerica
+	fmt.Printf("Below is the permission: \n")
+	fmt.Printf("%b\n", roles)
 }
