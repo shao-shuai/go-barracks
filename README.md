@@ -1,2 +1,2 @@
-# go-barracks
-My go barracks for practicing golang
+# Go-Barracks
+My barracks for practicing Golang.

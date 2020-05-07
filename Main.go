@@ -105,4 +105,11 @@ func main() {
 	var roles byte = isAdmin | canSeeFinancials | canSeeEurope | canSeeSouthAmerica
 	fmt.Printf("Below is the permission: \n")
 	fmt.Printf("%b\n", roles)
+
+	//Arrays
+	grades := [3]int{97, 85, 93}
+	fmt.Printf("Grades: %v\n", grades[0])
+
+	primitive.MakeSlice()
+
 }
